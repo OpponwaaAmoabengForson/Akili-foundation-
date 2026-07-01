@@ -1,0 +1,424 @@
+/* =========================================
+   1. VARIABLES & RESET
+   ========================================= */
+:root {
+    --navy-blue: #1a2352;
+    --lime-green: #7fd14c;
+    --white: #ffffff;
+    --text-dark: #333333;
+    --bg-light: #f9f9fc;
+    --accent-blue: #4c5fd5;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: var(--bg-light);
+    color: var(--text-dark);
+    overflow-x: hidden;
+}
+
+a { text-decoration: none; }
+
+/* =========================================
+   2. GLOBAL NAV & FOOTER
+   ========================================= */
+.top-bar {
+    background-color: #121940;
+    color: var(--white);
+    display: flex;
+    justify-content: flex-end;
+    padding: 10px 5%;
+    font-size: 0.8rem;
+    gap: 20px;
+}
+
+.navbar {
+    background-color: var(--navy-blue);
+    padding: 20px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--white);
+}
+
+.nav-links {
+    display: flex;
+    gap: 25px;
+    align-items: center;
+}
+
+.nav-links a {
+    color: var(--white);
+    font-weight: 400;
+    font-size: 0.9rem;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover, .active-link {
+    color: var(--lime-green) !important;
+}
+
+.btn-donate {
+    background-color: var(--lime-green);
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-weight: 600;
+    color: var(--navy-blue) !important;
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+}
+
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background-color: var(--white);
+}
+
+footer {
+    background-color: #0d1333;
+    color: var(--white);
+    padding: 5% 5% 2% 5%;
+}
+
+.footer-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.footer-links a {
+    display: block;
+    color: #aaa;
+    margin-bottom: 10px;
+}
+
+.footer-bottom {
+    text-align: center;
+    border-top: 1px solid #333;
+    padding-top: 20px;
+    color: #888;
+    font-size: 0.9rem;
+}
+
+.btn-primary {
+    background-color: var(--lime-green);
+    color: var(--navy-blue);
+    padding: 12px 30px;
+    border-radius: 25px;
+    font-weight: 600;
+    display: inline-block;
+    border: none;
+    cursor: pointer;
+}
+
+/* =========================================
+   3. HOME PAGE (INDEX)
+   ========================================= */
+.hero-section {
+    background-color: var(--navy-blue);
+    color: var(--white);
+    display: flex;
+    padding: 5% 5% 0 5%;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-content {
+    flex: 1;
+    z-index: 2;
+    padding-bottom: 10%;
+}
+
+.tagline {
+    border-left: 3px solid var(--lime-green);
+    padding-left: 10px;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+}
+
+.hero-content h1 {
+    font-size: 4rem;
+    font-weight: 700;
+    line-height: 1.1;
+    margin: 20px 0;
+}
+
+.hero-content p {
+    font-size: 1rem;
+    max-width: 80%;
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+.btn-secondary {
+    border: 1px solid var(--white);
+    color: var(--white);
+    padding: 12px 30px;
+    border-radius: 25px;
+    margin-left: 15px;
+    display: inline-block;
+}
+
+.hero-image {
+    flex: 1;
+    z-index: 2;
+    display: flex;
+    align-items: flex-end;
+}
+
+.hero-image img {
+    max-width: 100%;
+    border-top-left-radius: 100px;
+    border-top-right-radius: 100px;
+}
+
+.shape {
+    position: absolute;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.shape-blue {
+    width: 600px; height: 600px;
+    border: 100px solid var(--accent-blue);
+    top: 10%; right: 20%;
+}
+
+.shape-green {
+    width: 300px; height: 300px;
+    background-color: var(--lime-green);
+    top: -50px; right: -50px;
+}
+
+.about-section {
+    padding: 8% 5%;
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    background-color: var(--white);
+}
+
+.about-images { flex: 1; position: relative; }
+.about-images .main-img { width: 100%; border-radius: 20px; }
+
+.about-content { flex: 1; }
+.section-label {
+    background-color: #eef2fa;
+    color: var(--navy-blue);
+padding: 5px 15px;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.about-content h2 {
+    font-size: 2.5rem; color: var(--navy-blue); margin: 20px 0;
+}
+
+.about-content p {
+    color: #666; margin-bottom: 30px; line-height: 1.7;
+}
+
+.impact-section {
+    background-color: var(--navy-blue);
+    color: var(--white);
+    padding: 8% 5%;
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+
+.impact-content { flex: 1; }
+.impact-content h2 { font-size: 3rem; margin: 15px 0; }
+
+.btn-outline {
+    border: 1px solid var(--white);
+    color: var(--white);
+    padding: 10px 25px;
+    border-radius: 25px;
+    display: inline-block;
+    margin-top: 20px;
+}
+
+.impact-carousel {
+    flex: 1; display: flex; align-items: center; position: relative;
+}
+
+.impact-carousel img { width: 100%; border-radius: 20px; }
+.carousel-btn {
+    background-color: var(--lime-green);
+    color: var(--navy-blue);
+    border: none;
+    width: 40px; height: 40px;
+    border-radius: 50%;
+    font-size: 1.2rem;
+    cursor: pointer;
+    position: absolute;
+    z-index: 5;
+}
+
+.prev { left: -20px; }
+.next { right: -20px; }
+
+/* =========================================
+   4. INTERIOR PAGE HEADER
+   ========================================= */
+.page-header {
+    background-color: var(--navy-blue);
+    color: var(--white);
+    text-align: center;
+    padding: 8% 5% 4% 5%;
+}
+
+.page-header h1 {
+    font-size: 3rem; margin-bottom: 10px; color: var(--lime-green);
+}
+
+/* =========================================
+   5. TEAM PAGE
+   ========================================= */
+.team-section { padding: 5%; background-color: var(--bg-light); }
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.team-card {
+    background-color: var(--white);
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease;
+}
+.team-card:hover { transform: translateY(-10px); }
+.team-card img { width: 100%; height: 250px; object-fit: cover; }
+.team-info { padding: 20px; text-align: center; }
+.team-info h3 { color: var(--navy-blue); font-size: 1.3rem; margin-bottom: 5px; }
+.team-info .role { color: var(--accent-blue); font-weight: 600; font-size: 0.9rem; margin-bottom: 15px; }
+.team-info .bio { color: #666; font-size: 0.85rem; line-height: 1.6; }
+
+/* =========================================
+   6. PROGRAMS PAGE
+   ========================================= */
+.programs-section { padding: 5%; }
+.program-row {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    margin-bottom: 80px;
+    background-color: var(--white);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+.program-row.reverse { flex-direction: row-reverse; }
+.program-img { flex: 1; }
+.program-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.program-text { flex: 1; padding: 40px; }
+.program-text h2 { color: var(--navy-blue); font-size: 2.2rem; margin-bottom: 20px; }
+.program-text p { color: #666; line-height: 1.7; margin-bottom: 30px; font-size: 1.1rem; }
+
+/* =========================================
+   7. MEDIA PAGE
+   ========================================= */
+.media-section { padding: 5%; }
+.media-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.media-grid img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 15px;
+    transition: opacity 0.3s;
+}
+.media-grid img:hover { opacity: 0.8; cursor: pointer; }
+
+/* =========================================
+   8. CONTACT PAGE
+   ========================================= */
+.contact-section {
+    padding: 5%;
+    display: flex;
+    gap: 50px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.contact-form-container { flex: 1.5; background: var(--white); padding: 40px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
+.contact-form-container h2 { color: var(--navy-blue); margin-bottom: 20px; }
+.contact-form { display: flex; flex-direction: column; gap: 20px; }
+.contact-form input, .contact-form textarea {
+    width: 100%; padding: 15px;
+    border: 1px solid #ccc; border-radius: 10px;
+    font-size: 1rem;
+}
+.contact-form input:focus, .contact-form textarea:focus { outline: none; border-color: var(--accent-blue); }
+.contact-info-container { flex: 1; padding: 40px 0; }
+.contact-info-container h2 { color: var(--navy-blue); margin-bottom: 30px; }
+.info-block { margin-bottom: 30px; }
+.info-block h3 { color: var(--accent-blue); font-size: 1.1rem; margin-bottom: 10px; }
+.info-block p { color: #555; line-height: 1.6; }
+.social-links { display: flex; flex-direction: column; gap: 10px; }
+.social-links a { color: var(--text-dark); text-decoration: underline; }
+
+/* =========================================
+   9. MOBILE RESPONSIVENESS
+   ========================================= */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100px; right: 0;
+        background-color: var(--navy-blue);
+        width: 100%; padding: 20px 0;
+        text-align: center; z-index: 10;
+    }
+    .nav-links.active { display: flex; }
+    .hamburger { display: flex; }
+    .hero-section, .about-section, .impact-section, .program-row, .program-row.reverse, .contact-section {
+        flex-direction: column;
+    }
+    .hero-content h1 { font-size: 2.5rem; }
+    .hero-content p { max-width: 100%; }
+    .btn-secondary { margin-left: 0; margin-top: 15px; }
+    .shape-blue { width: 300px; height: 300px; border-width: 50px; }
+    .page-header h1 { font-size: 2rem; }
+}.footer-social {
+    display: flex;
+    flex-direction: column;
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.social-icons a {
+    color: var(--white);
+    font-size: 1.5rem;
+    transition: color 0.3s;
+}
+
+.social-icons a:hover {
+    color: var(--lime-green);
+}
