@@ -15,9 +15,9 @@ const carouselImage = document.getElementById('carouselImage');
 
 if (prevBtn && nextBtn && carouselImage) {
     const images = [
-        "https://placehold.co/500x300/4c5fd5/FFF?text=Students+Smiling",
-        "https://placehold.co/500x300/e52573/FFF?text=Classroom+Activity",
-        "https://placehold.co/500x300/f26d21/FFF?text=Community+Event"
+        "1.jpg",
+        "2.jpg",
+        "3.jpg"
     ];
 
     let currentIndex = 0;
