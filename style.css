@@ -419,6 +419,3 @@ padding: 5px 15px;
     transition: color 0.3s;
 }
 
-.social-icons a:hover {
-    color: var(--lime-green);
-}
